@@ -1,0 +1,250 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
+
+    font-size: 20px; /*Размер шрифта*/
+    line-height: 1;
+    color: #333;
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+/* Сделаем так, что бы не было заводсткого отступа свехру у заголовков */
+h1,h2,h3,h4,h5,h6{ margin:0;}
+
+
+/* Контейнер */
+.container{
+    width: 100%;
+    max-width: 1080px;
+    margin:0 auto;
+}
+
+/* Слайд1 */
+.intro{
+    display: flex;
+    flex-direction: column;
+    padding-top: 130px;
+    width: 100%;
+    height: 90vh;  /*100vh - один экран посетителя */
+    background: url("../image/2я.jpg") center no-repeat;
+    background-size: cover; /*Чтобы занимала всю площадь экрана */
+    text-align:center;
+
+
+}
+
+/*Создали специальный контейнер intro__inner для того что бы запись была по центру с отступами */
+.intro__inner{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+
+.intro__title{
+    font-size: 40;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align:center;
+    line-height: 1;
+    color: whitesmoke;
+}
+
+
+
+.intro__suptitle{
+    margin-bottom: 15px;
+    padding-top: 10px;
+    font-size: 40;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align:center;
+    line-height: 1;
+    color: white;
+}
+
+
+/* header
+*/
+.header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /*Чтоб был поверх всего*/
+    height: 50px;
+    width: 100%;
+    background-color: #B5B5B5;
+}
+
+/*Делаем логотип справа а ссылки слева*/
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 0px;
+
+}
+
+.header__logo{
+    height: 50px;
+    border-radius:20%;
+
+}
+
+.nav{
+    font-size: 14px;
+    text-transform: uppercase; /*Все буквы заглавные*/
+}
+
+.nav__link{
+    display: inline-block;   /*Все ссылки идут строкой*/
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative; /*указываем ссылку родителя*/
+
+    color:black;
+    text-decoration: none; /*Уберем подчеркивание снизу*/
+    transition: color .1s linear;
+}
+
+/*Что бы при наведении показывалась полоска под ссылкой*/
+.nav__link::after{ /*after - псевдо элемент благодаря которому мы сделали полоску*/
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+
+
+    background-color: gray; /*цвет полоски*/
+    opacity: 0; /*плавное появление линии от 0 до 1*/
+
+    position: absolute; /*привязываем полоску к ссылке, указывая у самой ссылки позицию relative*/
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opasity .1s linear; /*плавное появление линии от 0 до 1*/
+}
+.nav__link:hover{ /*Изменение цвета при наведении*/
+    color:gray;
+}
+ .nav__link:hover:after{ /*показ полоски под ссылкой при наведении*/
+    opacity: 1; /*плавное появление линии от 0 до 1*/
+ }
+
+/*Кнопка*/
+.btn{
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 30px;
+
+    border: 2px solid black;
+
+    font-size: 14px;
+    font-weight: 700;
+    color:black;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: color .2s linear, background-color .2s linear;
+
+
+}
+
+.btn:hover{
+    background-color: black;
+    color: gray;
+}
+
+/*НОВЫЙ СЛАЙД!!!!!!!!!!!!!!!!*/
+
+.section{
+    padding: 80px;
+
+}
+.section__header{
+    width: 100%;
+    height: 150px;
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+.section__suptitle{
+    font-family: sans-serif;
+    font-size: 18px;
+    color: black;
+}
+.section__title{
+    font-family: sans-serif;
+    font-size: 20px;
+    color: black;
+    text-transform: uppercase;
+}
+.section__title::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 30 auto 0;
+
+    background-color:black;
+}
+
+.photo_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;  /*100vh - один экран посетителя */
+    background: url("../image/я.jpg") center no-repeat;
+    background-size: cover; /*Чтобы занимала всю площадь экрана */
+    text-align:center;
+
+}
+
+.photo_text_container{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    color: blanchedalmond;
+}
+
+.page-footer {
+    margin-top: auto;
+    color: black;
+    background-color: #B5B5B5;
+  }
+
+.page-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 14px;
+  }
+
+  .page-footer p {
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
